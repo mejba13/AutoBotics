@@ -1,60 +1,121 @@
 
 # AutoBotics
 
-A modern, powerful, and high-performance SaaS solution designed for AI-driven customer service automation. AutoBotics simplifies global customer service challenges by using Laravel, Tailwind CSS, OpenAI GPT, and MySQL. With features like intelligent chatbots, multi-language support, and efficient conversation storage, AutoBotics aims to enhance customer satisfaction and retention.
+![AutoBotics](https://s3.us-east-1.amazonaws.com/mejba.me/AI/final-project.png)
+
+A SaaS solution for AI-driven customer service automation using Laravel, Tailwind CSS, and MySQL.
+
+Integrates **Rasa** on local and cloud servers with **Laravel** and custom AI training datasets. Enhances customer experience with intelligent chatbots and multi-language support.
+
+---
 
 ## 🚀 Features
 
-- AI-driven customer support using OpenAI GPT-4
+- AI-driven customer support using Rasa
 - Multi-language support for a global audience
-- Efficient database integration with Laravel and MySQL
-- Responsive UI built with Tailwind CSS
-- Seamless conversation history storage and retrieval
-- Scalable architecture for future enhancements
+- Laravel backend with seamless database integration
+- Responsive UI powered by Tailwind CSS
+- Scalable architecture for efficient AI operations
+- Easy integration for conversation history storage
+
+---
 
 ## 🛠️ Technology Stack
 
 - **Backend:** Laravel Framework
 - **Frontend:** Tailwind CSS
-- **AI Integration:** OpenAI GPT
+- **AI Integration:** Rasa
 - **Database:** MySQL
 - **Environment:** macOS (local development)
 
+---
+
 ## 🔧 Getting Started
+
+### Step 1: Setup Rasa on Local Server
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/AutoBotics.git
+   git clone https://github.com/mejba13/RasaBot-LocalServer-Setup.git
+   cd RasaBot-LocalServer-Setup
    ```
-2. Install dependencies:
+
+2. Create a Python virtual environment and activate it:
+   ```bash
+   python3.10 -m venv rasa_env
+   source rasa_env/bin/activate
+   ```
+
+3. Install Rasa:
+   ```bash
+   pip install rasa
+   ```
+
+4. Initialize and train the Rasa model:
+   ```bash
+   rasa init --no-prompt
+   rasa train
+   ```
+
+5. Run the Rasa server locally:
+   ```bash
+   rasa run --enable-api
+   ```
+
+6. (Optional) Run the Rasa action server:
+   ```bash
+   rasa run actions
+   ```
+
+---
+
+### Step 2: Integrate Rasa with Laravel
+
+1. Clone the **AutoBotics** Laravel repository:
+   ```bash
+   git clone https://github.com/mejba13/AutoBotics.git
+   cd AutoBotics
+   ```
+
+2. Install Laravel dependencies:
    ```bash
    composer install
    npm install
    ```
-3. Configure the `.env` file with your environment settings.
-4. Run migrations:
+
+3. Configure the `.env` file with your environment settings, including the Rasa API endpoint.
+
+4. Run Laravel migrations:
    ```bash
    php artisan migrate
    ```
-5. Start the local development server:
+
+5. Start the Laravel server:
    ```bash
    php artisan serve
    ```
+
 6. Access the application at `http://127.0.0.1:8000`.
+
+---
 
 ## 📂 Project Structure
 
-- **Backend:** `app/Http/Controllers/` for AI chat logic
+- **Backend:** `app/Http/Controllers/` contains chat logic
 - **Frontend:** Blade templates in `resources/views`
-- **Database:** Migrations and models for storing conversations
-- **Routes:** Defined in `routes/web.php`
+- **Database:** Models and migrations for conversation storage
+- **Routes:** API and web routes in `routes/web.php`
+
+---
 
 ## 🌟 Enhancements Roadmap
 
-- Advanced analytics and reporting
+- Real-time AI chat support
 - Role-based access control
-- Improved AI model training and customization
-- Real-time notifications and user interaction tracking
+- Advanced analytics for conversations
+- Enhanced AI model training and customization
+
+---
 
 ## 🔗 Let's Connect  
 
@@ -78,3 +139,9 @@ A modern, powerful, and high-performance SaaS solution designed for AI-driven cu
 - **PentesterLab**: [lucid_hacker_721](https://pentesterlab.com/profile/lucid_hacker_721)  
 - **DEV.to**: [Engr Mejba Ahmed](https://dev.to/engrmejbaahmed)  
 - **Quora**: [Engr Mejba Ahmed](https://www.quora.com/profile/Engr-Mejba-Ahmed)  
+
+---
+
+## License
+
+This project is licensed under the MIT License.
