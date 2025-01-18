@@ -9,5 +9,9 @@ class Conversation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_message', 'ai_reply'];
+    protected $fillable = [
+        'customer_id',
+        'user_message',
+        'ai_reply',
+    ];
 }

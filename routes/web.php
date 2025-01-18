@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\OpenAIController;
+use App\Http\Controllers\SupportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +34,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // AI Chat Routes
 Route::middleware(['auth'])->group(function () {
-    Route::get('/chat', [OpenAIController::class, 'index'])->name('chat'); // Chat page
-    Route::post('/api/chat', [OpenAIController::class, 'chat']);          // Chat API endpoint
+    Route::get('/live-support', [SupportController::class, 'showLiveSupport'])->name('live-support');
+    Route::post('/chat', [SupportController::class, 'handleChat'])->name('chat');
 });
 
 // Include Auth Routes (For Breeze Authentication)

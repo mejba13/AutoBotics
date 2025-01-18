@@ -15,8 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('chat')" :active="request()->routeIs('chat')">
-                        {{ __('AI Support Chat') }}
+                    <x-nav-link :href="route('live-support')" :active="request()->routeIs('live-support')">
+                        {{ __('Live Support') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -80,9 +80,9 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('chat')" :active="request()->routeIs('chat')">
-                {{ __('AI Support Chat') }}
-            </x-responsive-nav-link>
+            <x-nav-link :href="route('live-support')" :active="request()->routeIs('live-support')">
+                {{ __('Live Support') }}
+            </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
